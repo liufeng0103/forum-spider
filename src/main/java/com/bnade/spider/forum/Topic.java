@@ -13,14 +13,14 @@ public interface Topic {
 	 * 
 	 * @return 帖子id
 	 */
-	Integer getId();
+	int getId();
 
 	/**
 	 * 设置帖子id
 	 * 
 	 * @param id 帖子id
 	 */
-	void setId(Integer id);
+	void setId(int id);
 
 	/**
 	 * 获取帖子标题
