@@ -25,11 +25,11 @@ public interface Forum {
 	/**
 	 * 获取论坛某版块某页的页面信息
 	 * 
-	 * @param board 版块
+	 * @param boardId 版块id
 	 * @param pageNum 页码 
 	 * @return 论坛页面信息
 	 */
-	Page getPage(Board board, int pageNum);
+	Page getPage(int boardId, int pageNum);
 
 	/**
 	 * 获取论坛某页的页面信息，版块如果之前指定过则为上一次访问的版块，否则使用默认版块

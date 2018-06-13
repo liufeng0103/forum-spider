@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -102,8 +100,8 @@ public class NgaForum implements Forum {
 	}
 
 	@Override
-	public Page getPage(Board board, int pageNumber) {
-		this.board = board;
+	public Page getPage(int boardId, int pageNumber) {
+		this.board = NgaBoard.get(boardId);
 		this.pageNumber = pageNumber;
 		return convertUrlToPage();
 	}
@@ -111,10 +109,6 @@ public class NgaForum implements Forum {
 	@Override
 	public void setBoard(Board board) {
 		this.board = board;
-		/**
-		 * 设置版块时，重置到第一页
-		 */
-		pageNumber = 1;
 	}
 
 	public void setPageNumber(int pageNumber) {
